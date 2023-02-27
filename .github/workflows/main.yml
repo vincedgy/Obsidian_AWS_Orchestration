@@ -21,11 +21,10 @@ jobs:
       - name: List files in the repository
         run: |
           mkdir output  # create output dir
-          ls ${{ github.workspace }} *.md
-          echo "::set-output name=files::$(printf '"%s" ' *.md)"
+          ls ${{ github.workspace }} *.md >> $GITHUB_STATE
       - uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=output/index.html ${{ steps.files_list.outputs.files }}
+          args: --standalone --output=output/index.html $GITHUB_STATE
       - uses: actions/upload-artifact@master
         with:
           name: output
