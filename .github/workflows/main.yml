@@ -38,7 +38,7 @@ jobs:
       - name: Merge Markdown files to index.html
         uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=output/index.html 
+          args: --standalone --output=output/index.html
           path: ${{ github.workspace }}/$MARKDOWN_FILES
       - name: display content
         run : |
