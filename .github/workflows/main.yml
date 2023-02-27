@@ -27,15 +27,15 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Create output directory
+        run: mkdir output
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}/*.md > ${{ github.workspace }}/$MARKDOWN_FILES
-          cat ${{ github.workspace }}/$MARKDOWN_FILES
+        id: files_list
+        run: ls ${{ github.workspace }}/*.md
       - name: Merge Markdown files to index.html
         uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=index.html
-          path: ${{ github.workspace }}/$MARKDOWN_FILES
+          args: --standalone --output=output/index.html ${{ steps.files_list.outputs.files }}
       - uses: actions/upload-artifact@master
         with:
           name: output
