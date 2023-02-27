@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Article maitre.md",
+                "file": "Musique et processus de création.md",
                 "mode": "source",
                 "source": false
               }
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Article maitre.md",
+                "file": "Musique et processus de création.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Article maitre.md",
+                "file": "Musique et processus de création.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Article maitre.md"
+                "file": "Musique et processus de création.md"
               }
             }
           }
@@ -163,12 +163,13 @@
       "workspaces:Gérer les espaces de travail": false
     }
   },
-  "active": "a0a57db476eb1523",
+  "active": "368a49ac64a4b920",
   "lastOpenFiles": [
+    "includes.txt",
+    "2. Amazon Step Functions.md",
+    "1. Article maitre.md",
     "README.md.md",
     "README.md",
-    "1. Article maitre.md",
-    "2. Amazon Step Functions.md",
     "Musique et processus de création.md",
     "Caroline.md",
     "2023-02-25.md"
