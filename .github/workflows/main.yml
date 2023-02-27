@@ -4,7 +4,17 @@
 
 name: Build final Article
 
-on: push
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 jobs:
@@ -12,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+    env:
+      MARKDOWN_FILES: markdown_files.txt
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -21,10 +33,13 @@ jobs:
       - name: List files in the repository
         run: |
           mkdir output  # create output dir
-          ls ${{ github.workspace }} *.md >> $GITHUB_STATE
+          ls ${{ github.workspace }} *.md > $MARKDOWN_FILES
+      - name: Show files to merge
+        run: cat $HOME/$MARKDOWN_FILES
       - uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=output/index.html $GITHUB_STATE
+          args: --standalone --output=output/index.html
+          path: $MARKDOWN_FILES
       - uses: actions/upload-artifact@master
         with:
           name: output
