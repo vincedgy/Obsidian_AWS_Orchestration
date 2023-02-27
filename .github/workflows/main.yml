@@ -36,10 +36,10 @@ jobs:
           ls ${{ github.workspace }}/*.md > ${{ github.workspace }}/$MARKDOWN_FILES
       - name: Show files to merge
         run: cat ${{ github.workspace }}/${MARKDOWN_FILES}
-      - uses: docker://pandoc/core:2.9
+      - name: Merge Markdown files to index.html
+        uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=output/index.html
-          path: ${{ github.workspace }}/${MARKDOWN_FILES}
+          args: --standalone --output=output/index.html ${{ github.workspace }}/${MARKDOWN_FILES}
       - uses: actions/upload-artifact@master
         with:
           name: output
