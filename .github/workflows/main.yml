@@ -42,7 +42,7 @@ jobs:
           path: ${{ github.workspace }}/$MARKDOWN_FILES
       - name: display content
         run : |
-        cat output/index.html  
+          cat output/index.html  
       - uses: actions/upload-artifact@master
         with:
           name: output
