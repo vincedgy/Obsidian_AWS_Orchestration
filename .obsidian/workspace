@@ -1,0 +1,137 @@
+{
+  "main": {
+    "id": "ddfff896ece05436",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8c8ca8578406ce6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Caroline.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7b514f8e9fbd323d",
+    "type": "split",
+    "children": [
+      {
+        "id": "b24ad51a08f8e730",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "368a49ac64a4b920",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d3fae4efe1e36034",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a90f57becaa1dd1a",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0371333a0368cd47",
+    "type": "split",
+    "children": [
+      {
+        "id": "61c304147007e8ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "60e4520fe6b3b2c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Caroline.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "00eefe81d82c1bc0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Caroline.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f1ee7ae4c8dc666c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "287fa21e4905f16f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Caroline.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f8c8ca8578406ce6",
+  "lastOpenFiles": [
+    "1. Article maitre.md",
+    "2. Amazon Step Functions.md",
+    "Musique et processus de création.md"
+  ]
+}
