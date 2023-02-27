@@ -25,32 +25,17 @@ jobs:
     env:
       MARKDOWN_FILES: markdown_files.txt
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: List files in the repository
         run: |
-          mkdir output  # create output dir
           ls ${{ github.workspace }}/*.md > ${{ github.workspace }}/$MARKDOWN_FILES
           cat ${{ github.workspace }}/$MARKDOWN_FILES
       - name: Merge Markdown files to index.html
         uses: docker://pandoc/core:2.9
         with:
-          args: --standalone --output=output/index.html
+          args: --standalone --output=index.html
           path: ${{ github.workspace }}/$MARKDOWN_FILES
-      - name: display content
-        run : |
-          cat output/index.html  
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: build # The branch name where you want to push the assets
-          FOLDER: build # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
       - uses: actions/upload-artifact@master
         with:
           name: output
