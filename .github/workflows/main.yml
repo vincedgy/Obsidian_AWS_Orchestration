@@ -32,7 +32,7 @@ jobs:
       - name: Merge Markdown files to index.html
         uses: docker://pandoc/core:latest
         with:
-          args: -s -o=output/index.html ${{GITHUB_REPOSITORY}}/*.md
+          args: -s -o=output/index.html
       - uses: actions/upload-artifact@master
         with:
           name: output
