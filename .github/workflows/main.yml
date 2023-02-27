@@ -33,13 +33,13 @@ jobs:
       - name: List files in the repository
         run: |
           mkdir output  # create output dir
-          ls ${{ github.workspace }} *.md > $MARKDOWN_FILES
+          ls ${{ github.workspace }}/*.md > ${{ github.workspace }}/$MARKDOWN_FILES
       - name: Show files to merge
-        run: cat $HOME/$MARKDOWN_FILES
+        run: cat ${{ github.workspace }}/${MARKDOWN_FILES}
       - uses: docker://pandoc/core:2.9
         with:
           args: --standalone --output=output/index.html
-          path: $MARKDOWN_FILES
+          path: ${{ github.workspace }}/${MARKDOWN_FILES}
       - uses: actions/upload-artifact@master
         with:
           name: output
