@@ -1,3 +1,1 @@
-![[1. Article maitre]]
-
-![[2. Amazon Step Functions]]
+This is an article I'm currently writing and publishing on Meddium and LinkedIn
